@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HtmlAgilityPack;
 using System.IO;
-
+using System.Drawing.Drawing2D;
 
 namespace OsbAkilliTahta
 {
@@ -188,9 +188,32 @@ namespace OsbAkilliTahta
             form1.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = true;
+        }
+
+        private void txtsifregiris_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnkapat_Click(object sender, EventArgs e)
+        {
+            groupBox1.Visible = false;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            int hwnd = FindWindow("Shell_TrayWnd", "");
+            ShowWindow(hwnd, SW_SHOW);
+
+            Application.Exit();
         }
     }
 }
