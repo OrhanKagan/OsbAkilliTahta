@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OsbAkilliTahtaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBL_HABERLER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Haber_Baslik" Type="nvarchar" MaxLength="20" />
+          <Property Name="Haber_Gorsel" Type="nvarchar" MaxLength="200" />
+          <Property Name="Haber_Konu" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TBL_OGRETMENLER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="TelefonNumara" Type="char" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="TBL_SOZLER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Soz" Type="nvarchar" MaxLength="90" />
+        </EntityType>
+        <EntityContainer Name="OsbAkilliTahtaModelStoreContainer">
+          <EntitySet Name="TBL_HABERLER" EntityType="Self.TBL_HABERLER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_OGRETMENLER" EntityType="Self.TBL_OGRETMENLER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_SOZLER" EntityType="Self.TBL_SOZLER" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OsbAkilliTahtaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TBL_OGRETMENLER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TelefonNumara" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="OsbAkilliTahtaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBL_OGRETMENLER" EntityType="Self.TBL_OGRETMENLER" />
+          <EntitySet Name="TBL_HABERLER" EntityType="OsbAkilliTahtaModel.TBL_HABERLER" />
+          <EntitySet Name="TBL_SOZLER" EntityType="OsbAkilliTahtaModel.TBL_SOZLER" />
+        </EntityContainer>
+        <EntityType Name="TBL_HABERLER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Haber_Baslik" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Haber_Gorsel" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Haber_Konu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBL_SOZLER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Soz" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OsbAkilliTahtaModelStoreContainer" CdmEntityContainer="OsbAkilliTahtaEntities">
+          <EntitySetMapping Name="TBL_OGRETMENLER">
+            <EntityTypeMapping TypeName="OsbAkilliTahtaModel.TBL_OGRETMENLER">
+              <MappingFragment StoreEntitySet="TBL_OGRETMENLER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Gmail" ColumnName="Gmail" />
+                <ScalarProperty Name="TelefonNumara" ColumnName="TelefonNumara" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_HABERLER">
+            <EntityTypeMapping TypeName="OsbAkilliTahtaModel.TBL_HABERLER">
+              <MappingFragment StoreEntitySet="TBL_HABERLER">
+                <ScalarProperty Name="Haber_Konu" ColumnName="Haber_Konu" />
+                <ScalarProperty Name="Haber_Gorsel" ColumnName="Haber_Gorsel" />
+                <ScalarProperty Name="Haber_Baslik" ColumnName="Haber_Baslik" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_SOZLER">
+            <EntityTypeMapping TypeName="OsbAkilliTahtaModel.TBL_SOZLER">
+              <MappingFragment StoreEntitySet="TBL_SOZLER">
+                <ScalarProperty Name="Soz" ColumnName="Soz" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

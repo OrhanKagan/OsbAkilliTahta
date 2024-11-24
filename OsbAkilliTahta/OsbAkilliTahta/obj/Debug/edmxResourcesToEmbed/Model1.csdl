@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OsbAkilliTahtaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TBL_OGRETMENLER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TelefonNumara" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="OsbAkilliTahtaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TBL_OGRETMENLER" EntityType="Self.TBL_OGRETMENLER" />
+    <EntitySet Name="TBL_HABERLER" EntityType="OsbAkilliTahtaModel.TBL_HABERLER" />
+    <EntitySet Name="TBL_SOZLER" EntityType="OsbAkilliTahtaModel.TBL_SOZLER" />
+  </EntityContainer>
+  <EntityType Name="TBL_HABERLER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Haber_Baslik" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Haber_Gorsel" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Haber_Konu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TBL_SOZLER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Soz" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
