@@ -25,8 +25,8 @@ namespace OsbAkilliTahta
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<TBL_OGRETMENLER> TBL_OGRETMENLER { get; set; }
         public virtual DbSet<TBL_HABERLER> TBL_HABERLER { get; set; }
+        public virtual DbSet<TBL_OGRETMENLER> TBL_OGRETMENLER { get; set; }
         public virtual DbSet<TBL_SOZLER> TBL_SOZLER { get; set; }
     }
 }

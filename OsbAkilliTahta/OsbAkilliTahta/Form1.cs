@@ -159,5 +159,10 @@ namespace OsbAkilliTahta
             Form2 form2 = new Form2();
             form2.Show();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

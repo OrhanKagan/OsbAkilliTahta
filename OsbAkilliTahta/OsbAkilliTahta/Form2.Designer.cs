@@ -66,6 +66,10 @@
             this.txtsifregiris = new System.Windows.Forms.TextBox();
             this.button27 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btntemizle = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.btngerial = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -154,6 +158,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.groupBox1.Controls.Add(this.btngerial);
+            this.groupBox1.Controls.Add(this.button10);
+            this.groupBox1.Controls.Add(this.btntemizle);
+            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.btnkapat);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.btntamam);
@@ -179,9 +188,9 @@
             this.groupBox1.Controls.Add(this.button13);
             this.groupBox1.Controls.Add(this.button14);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(15, 329);
+            this.groupBox1.Location = new System.Drawing.Point(15, 269);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(300, 431);
+            this.groupBox1.Size = new System.Drawing.Size(300, 475);
             this.groupBox1.TabIndex = 94;
             this.groupBox1.TabStop = false;
             this.groupBox1.Visible = false;
@@ -227,6 +236,7 @@
             this.btntamam.TabIndex = 95;
             this.btntamam.Text = "Tamam";
             this.btntamam.UseVisualStyleBackColor = false;
+            this.btntamam.Click += new System.EventHandler(this.btntamam_Click);
             // 
             // btn1
             // 
@@ -238,6 +248,7 @@
             this.btn1.TabIndex = 115;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = true;
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
             // button22
             // 
@@ -262,6 +273,7 @@
             this.btn3.TabIndex = 113;
             this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = true;
+            this.btn3.Click += new System.EventHandler(this.btn3_Click);
             // 
             // button24
             // 
@@ -286,6 +298,7 @@
             this.btn2.TabIndex = 111;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = true;
+            this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
             // button26
             // 
@@ -310,6 +323,7 @@
             this.btn4.TabIndex = 109;
             this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = true;
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
             // button9
             // 
@@ -334,6 +348,7 @@
             this.btn6.TabIndex = 107;
             this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = true;
+            this.btn6.Click += new System.EventHandler(this.btn6_Click);
             // 
             // button18
             // 
@@ -358,6 +373,7 @@
             this.btn5.TabIndex = 105;
             this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = true;
+            this.btn5.Click += new System.EventHandler(this.btn5_Click);
             // 
             // button20
             // 
@@ -382,6 +398,7 @@
             this.btn7.TabIndex = 103;
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = true;
+            this.btn7.Click += new System.EventHandler(this.btn7_Click);
             // 
             // button3
             // 
@@ -406,6 +423,7 @@
             this.btn9.TabIndex = 101;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = true;
+            this.btn9.Click += new System.EventHandler(this.btn9_Click);
             // 
             // button5
             // 
@@ -430,6 +448,7 @@
             this.btn8.TabIndex = 99;
             this.btn8.Text = "8";
             this.btn8.UseVisualStyleBackColor = true;
+            this.btn8.Click += new System.EventHandler(this.btn8_Click);
             // 
             // button7
             // 
@@ -454,6 +473,7 @@
             this.btn0.TabIndex = 97;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = true;
+            this.btn0.Click += new System.EventHandler(this.btn0_Click);
             // 
             // button13
             // 
@@ -483,9 +503,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.groupBox2.Controls.Add(this.txtsifregiris);
             this.groupBox2.Controls.Add(this.button27);
-            this.groupBox2.Location = new System.Drawing.Point(15, 258);
+            this.groupBox2.Location = new System.Drawing.Point(15, 198);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(300, 75);
             this.groupBox2.TabIndex = 95;
@@ -524,6 +545,62 @@
             this.button1.Text = "Çıkıs Yap(En son Silinecek)";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btntemizle
+            // 
+            this.btntemizle.BackColor = System.Drawing.Color.DarkGreen;
+            this.btntemizle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btntemizle.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btntemizle.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btntemizle.Location = new System.Drawing.Point(19, 428);
+            this.btntemizle.Margin = new System.Windows.Forms.Padding(5);
+            this.btntemizle.Name = "btntemizle";
+            this.btntemizle.Size = new System.Drawing.Size(121, 31);
+            this.btntemizle.TabIndex = 120;
+            this.btntemizle.Text = "Temizle";
+            this.btntemizle.UseVisualStyleBackColor = false;
+            this.btntemizle.Click += new System.EventHandler(this.btntemizle_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Gray;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button6.Location = new System.Drawing.Point(13, 433);
+            this.button6.Margin = new System.Windows.Forms.Padding(5);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(121, 31);
+            this.button6.TabIndex = 119;
+            this.button6.Text = "0";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // btngerial
+            // 
+            this.btngerial.BackColor = System.Drawing.Color.Green;
+            this.btngerial.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btngerial.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btngerial.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btngerial.Location = new System.Drawing.Point(152, 428);
+            this.btngerial.Margin = new System.Windows.Forms.Padding(5);
+            this.btngerial.Name = "btngerial";
+            this.btngerial.Size = new System.Drawing.Size(121, 31);
+            this.btngerial.TabIndex = 122;
+            this.btngerial.Text = "Geri Al";
+            this.btngerial.UseVisualStyleBackColor = false;
+            this.btngerial.Click += new System.EventHandler(this.btngerial_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Gray;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button10.Location = new System.Drawing.Point(146, 433);
+            this.button10.Margin = new System.Windows.Forms.Padding(5);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(121, 31);
+            this.button10.TabIndex = 121;
+            this.button10.Text = "0";
+            this.button10.UseVisualStyleBackColor = false;
             // 
             // Form2
             // 
@@ -593,5 +670,9 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnkapat;
+        private System.Windows.Forms.Button btngerial;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btntemizle;
+        private System.Windows.Forms.Button button6;
     }
 }

@@ -19,5 +19,6 @@ namespace OsbAkilliTahta
         public string Sifre { get; set; }
         public string Gmail { get; set; }
         public string TelefonNumara { get; set; }
+        public Nullable<int> TekKulanımlıkŞifre { get; set; }
     }
 }

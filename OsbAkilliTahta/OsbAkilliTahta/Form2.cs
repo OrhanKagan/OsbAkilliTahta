@@ -215,5 +215,91 @@ namespace OsbAkilliTahta
 
             Application.Exit();
         }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            txtsifregiris.Text += 1;
+        }
+
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            txtsifregiris.Text += 2;
+        }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            txtsifregiris.Text += 3;
+        }
+
+        private void btn4_Click(object sender, EventArgs e)
+        {
+            txtsifregiris.Text += 4;
+        }
+
+        private void btn5_Click(object sender, EventArgs e)
+        {
+            txtsifregiris.Text += 5;
+        }
+
+        private void btn6_Click(object sender, EventArgs e)
+        {
+            txtsifregiris.Text += 6;
+        }
+
+        private void btn7_Click(object sender, EventArgs e)
+        {
+            txtsifregiris.Text += 7;
+        }
+
+        private void btn8_Click(object sender, EventArgs e)
+        {
+            txtsifregiris.Text += 8;
+        }
+
+        private void btn9_Click(object sender, EventArgs e)
+        {
+            txtsifregiris.Text += 9;
+        }
+
+        private void btn0_Click(object sender, EventArgs e)
+        {
+            txtsifregiris.Text += 0;
+        }
+
+        private void btntamam_Click(object sender, EventArgs e)
+        {
+            int sifre = int.Parse(txtsifregiris.Text);
+            var _id = db.TBL_OGRETMENLER.Where(x => x.TekKulanımlıkŞifre == sifre).FirstOrDefault();
+            if (_id != null && _id.TekKulanımlıkŞifre == sifre)
+            {
+                int id = _id.ID;
+                var table = db.TBL_OGRETMENLER.Find(id);
+                table.TekKulanımlıkŞifre = 364663411;
+                db.SaveChanges();
+                MessageBox.Show("Şifreniz Doğru Giriş Yapılıyor");
+
+                int hwnd = FindWindow("Shell_TrayWnd", "");
+                ShowWindow(hwnd, SW_SHOW);
+
+                Application.Exit();
+            }
+            else
+            {
+                MessageBox.Show("Şifrenizi Yanlış Girdiniz");
+            }
+        }
+
+        private void btntemizle_Click(object sender, EventArgs e)
+        {
+            txtsifregiris.Text ="";
+        }
+
+        private void btngerial_Click(object sender, EventArgs e)
+        {
+            if (txtsifregiris.Text.Length > 0)
+            {
+                txtsifregiris.Text = txtsifregiris.Text.Remove(txtsifregiris.Text.Length - 1, 1);
+            }
+        }
     }
 }
