@@ -200,7 +200,11 @@ namespace OsbAkilliTahta
 
         private void txtsifregiris_TextChanged(object sender, EventArgs e)
         {
-
+            if (txtsifregiris.Text.Length > 6)
+            {
+                txtsifregiris.Text = txtsifregiris.Text.Substring(0, 6);
+                txtsifregiris.SelectionStart = txtsifregiris.Text.Length;
+            }
         }
 
         private void btnkapat_Click(object sender, EventArgs e)
